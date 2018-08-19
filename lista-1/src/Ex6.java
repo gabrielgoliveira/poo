@@ -1,9 +1,5 @@
-package lista1;
-
 import javax.swing.JOptionPane;
-
 public class Ex6 {
-
 	public static void main(String[] args) {
 		int vet[];
 		int troca;

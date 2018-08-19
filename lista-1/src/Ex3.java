@@ -1,7 +1,4 @@
-package lista1;
-
 import javax.swing.JOptionPane;
-
 public class Ex3 {
 
 	public static void main(String[] args) {
