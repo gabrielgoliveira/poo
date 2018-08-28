@@ -11,12 +11,14 @@ public class Produto {
 	Produto(int id){
 		//construtor completo
 		this.id = id;
+		System.out.println("Objeto Instanciado\n");
 	}
 
 	Produto(int id, String nome){
 		//construtor completo
 		this.id = id;
 		this.nome = nome;
+		System.out.println("Objeto Instanciado\n");
 	}
 
 	
@@ -25,6 +27,7 @@ public class Produto {
 		this.id = id;
 		this.nome = nome;
 		this.quantidade = quantidade;
+		System.out.println("Objeto Instanciado\n");
 	}
 	
 	Produto(int id, String nome, int quantidade, String tipo, double valor){
@@ -34,6 +37,7 @@ public class Produto {
 		this.quantidade = quantidade;
 		this.tipo = tipo;
 		this.valor = valor;
+		System.out.println("Objeto Instanciado\n");
 	}
 	
 	
@@ -63,9 +67,16 @@ public class Produto {
 		this.quantidade = quantidade;
 		this.valor = valor;
 	}
-	
+	void inserir(int quantidade, double valor){
+		this.quantidade = quantidade;
+		this.valor = valor;
+	}
+	void inserir(double valor){
+		this.valor = valor;
+	}
 	void igual(Produto compara){
 		this.nome = compara.nome;
 		this.tipo = compara.tipo;
 	}
+
 }
