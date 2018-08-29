@@ -74,9 +74,14 @@ public class Produto {
 	void inserir(double valor){
 		this.valor = valor;
 	}
-	void igual(Produto compara){
-		this.nome = compara.nome;
-		this.tipo = compara.tipo;
+	boolean igual(Produto compara){
+		
+		if(this.nome == compara.nome  && this.tipo == compara.tipo) {
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 
 }

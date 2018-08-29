@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 
 public class Principal {
 	public static int busca(int chave, int tamanho, Produto[] x) {
-		//recebe uma chave e retorna uma posição do vetor e -1 se não encontrar
+		//recebe uma chave e retorna uma posiï¿½ï¿½o do vetor e -1 se nï¿½o encontrar
 		int i;
 		for(i = 0; i<tamanho; i++) {
 			if(x[i].id == chave){
@@ -14,7 +14,7 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub 
 		int i = 1, cont, id, tamanho = 0, op = 1;
-		int posicao, chave, quantVenda, somaQuant;
+		int posicao, posicao2, chave, chave2, quantVenda, somaQuant;
 		String nome, tipo;
 		int quantidade;
 		double valor, novoValor;
@@ -72,7 +72,7 @@ public class Principal {
 		}
 		
 		while(op!=0) {
-			op = Integer.parseInt(JOptionPane.showInputDialog("Deseja Realizar uma Operação ?\n"
+			op = Integer.parseInt(JOptionPane.showInputDialog("Deseja Realizar uma Operaï¿½ï¿½o ?\n"
 											  + "0 - Sair\n"
 											  + "1 - Vender\n" 
 											  + "2 - Comprar\n"
@@ -91,7 +91,7 @@ public class Principal {
 						quantVenda = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade que deseja vender: "));
 						vetor[posicao].vender(quantVenda);
 					} else {
-						JOptionPane.showMessageDialog(null, "Produto não encontrado");
+						JOptionPane.showMessageDialog(null, "Produto nï¿½o encontrado");
 					}
 				break;
 				case 2:
@@ -101,7 +101,7 @@ public class Principal {
 						somaQuant = Integer.parseInt(JOptionPane.showInputDialog("Quantidade Comprada: "));
 						vetor[posicao].comprar(novoValor, somaQuant);
 					}else {
-						JOptionPane.showMessageDialog(null, "Produto não encontrado");
+						JOptionPane.showMessageDialog(null, "Produto nï¿½o encontrado");
 					}
 				break;
 				case 3:
@@ -109,11 +109,18 @@ public class Principal {
 					if(posicao != -1) {
 						vetor[posicao].consultar();
 					} else {
-						JOptionPane.showMessageDialog(null, "Produto não encontrado");
+						JOptionPane.showMessageDialog(null, "Produto nï¿½o encontrado");
 					}
 				break;
 				case 4:
 					//comparar
+					chave2 = Integer.parseInt(JOptionPane.showInputDialog("Digite a chave do outro produto para ser feita a comparaï¿½ï¿½o: "));
+					posicao2 = busca(chave2, tamanho, vetor);
+					if(vetor[posicao].igual(vetor[posicao2])){
+						JOptionPane.showMessageDialog(null, "Produtos com nome e Tipo: Iguais");
+					} else {
+						JOptionPane.showMessageDialog(null, "Produtos com nome ou Tipo (ou os dois): Diferentes");
+					}
 				break;
 			}
 		}
